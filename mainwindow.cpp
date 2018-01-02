@@ -8,7 +8,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    srand(QTime::currentTime().hour() + QTime::currentTime().second());
+    srand(QTime::currentTime().hour() + QTime::currentTime().second() +
+          QTime::currentTime().minute() + QTime::currentTime().msec());
     stRed = 200;
     stGreen = 200;
     stBlue = 0;
@@ -88,7 +89,7 @@ void MainWindow::on_save_clicked()
 
     std::vector<std::vector<double> > lims = createLim(width, height, ab, ae, bb, be, inp);
     highImg = draw(lims, width, height, path, stRed, stGreen, stBlue, chRed, chGreen, chBlue);
-    QString fileName = QString::fromStdString(path);
+    QString fileName = QString::fromStdString(path) + "/";
 
     QTime time = QTime::currentTime();
     fileName += time.toString();
