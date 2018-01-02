@@ -91,8 +91,11 @@ void MainWindow::on_save_clicked()
     highImg = draw(lims, width, height, path, stRed, stGreen, stBlue, chRed, chGreen, chBlue);
     QString fileName = QString::fromStdString(path) + "/";
 
-    QTime time = QTime::currentTime();
-    fileName += time.toString();
+    //QTime time = QTime::currentTime();
+    //fileName += time.toString();
+    fileName = fileName + "(" + QString::number(ab) + "_" +
+            QString::number(ae) + ")" + "(" + QString::number(bb) +
+            "_" + QString::number(be) + ")" + "_" + QString::fromStdString(inp);
     fileName+= ".png";
     highImg->save(fileName);
     delete highImg;
