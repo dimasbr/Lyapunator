@@ -1,0 +1,9 @@
+This is Lyapunov fractals image generator.
+"Random" button allows the user to generate image with random arguments with size 200x200 px
+which will be shown on the screen.
+"Save 2000x2000" button allows to save current image in directory, which you can choose by
+clicking "Path" button. This will take some time (~15-40 secs). Don't worry if program
+will not answer in this time, just wait.
+"Arguments" button allows the user to see curren arguments for generating image and change them.
+"Redraw" will update image after arguments change.
+Color sliders on "Stability" and "Chaos" tabs allows to change the coloring of image.
